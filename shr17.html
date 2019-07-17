@@ -1,0 +1,191 @@
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+.input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+</style>
+
+
+<center>
+<font size=6>
+<h1>
+REGISTERATION FORM
+</h1>
+</font>
+</center>
+</head>
+<body background="tree.png">
+<br>
+<br>
+<br>
+<center>
+<form>
+<table>
+<tr>
+<td>
+<b><font size=4 color="black"> NAME:</font></b>
+</td>
+<td>
+<input type="text" id="name" class="input"  required><br><br>
+</td>
+</tr>
+<tr>
+<td>
+<b><font size=4 color="black"> E-MAIL</font></b>
+</td>
+<td>
+<input type="email" id="em" class="input"  required><br><br>
+</td>
+</tr>
+
+<tr>
+<td>
+<b><font size=4 color="black"> date of birth:</font></b>
+</td>
+<td>
+<input type="date" id="d" class="input"  required><br><br>
+</td>
+</tr>
+<tr>
+<td>
+<b><font size=4 color="black">PASSWORD</font></b>
+</td>
+<td><input id="pass1" type="password" class="input" required> </td>
+</tr>
+<tr>
+<td>
+<b><font size=4 color="black"> RE-ENTER PASSWORD</font></b>
+</td>
+<td><input id="pass2" type="password" class="input" required>  </td>
+</tr>
+
+</table>
+</form>
+</center>
+<br>
+<br>
+<center>
+<center>
+<button type="button" onclick="myFunction()">
+<font size=4 color="black">
+CREATE ACCOUNT
+</font>
+</button>
+</center>
+ 
+</center>
+
+<script>
+    function myFunction() {
+        var a=document.getElementById("name").value;
+	  var c=document.getElementById("em").value;
+	  var d=document.getElementById("d").value;
+        var pass1 = document.getElementById("pass1").value;
+        var pass2 = document.getElementById("pass2").value;
+         if(a==""||c==""||d==""||pass1==""||pass2=="")
+         {
+          alert("please fill all the field");
+	  } 
+        else{
+        if ((a.length > 3) && (a.length < 12)){
+        var re = /^[A-Za-z]+$/;
+        if(re.test(document.getElementById("name").value)){
+        if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("em").value)){
+               
+        if(pass1.length>6)
+        {
+        if (pass1 != pass2) {
+            alert("Passwords Do not match");    
+        }
+        else {
+            alert(" Passwords Match!!!  account created!");          
+            if (window.confirm("Would you like to login page")) {
+               window.location.href = "shr2.html"
+             }
+
+        }
+        
+      }
+      else{
+       alert("password must be greater than 6 characters!");
+         }
+        }
+       else{
+        alert("pls enter valid email id");
+           }
+       }
+      else{
+        alert("please enter only characters in name."); 
+        }
+        }
+      else{
+         alert("name should be 3 to 12 characters long");
+          }
+      }
+
+    }
+</script>
+</body>
+</html>

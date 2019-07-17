@@ -1,0 +1,28 @@
+<html>
+<head>test
+</head>
+<body>
+
+<label>password :
+  <input name="password" id="password" type="password" onkeyup='function();' />
+</label>
+<br>
+<label>confirm password:
+  <input type="password" name="confirm_password" id="confirm_password"  onkeyup='function();' /> 
+  <span id='message'></span>
+</label>
+<script type="text/javascript">
+function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+</script>
+
+</body>
+</html>

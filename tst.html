@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<select id="ddlViewBy">
+  <option value="1">test1</option>
+  <option value="2" selected="selected">test2</option>
+  <option value="3">test3</option></select>
+<button type="button" onclick="myFunction()">submit</button>
+
+
+<script>
+function myfunction(){
+                 var e = document.getElementById("ddlViewBy");
+                 var strUser = e.options[e.selectedIndex].value;
+                 if(strUser==1){
+                    alert("mumbai");
+                 }
+                 else{
+                    alert("pune");
+                 }
+
+}
+
+</script>
+</body>
+</html>

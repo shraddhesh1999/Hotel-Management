@@ -1,0 +1,124 @@
+<html>
+<head>
+<font size=6>
+<center>
+<h1>
+FEED BACK FORM</h1>
+</center>
+<style>
+.input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid black;
+}
+
+</style>
+</head>
+<body background="del.jpg">
+<br>
+<br>
+<center>
+
+<table>
+<tr>
+<td>
+<font size=5><b>
+name:</b></font></td>
+<td><input type="text" id="name" class="input"></td>
+</tr>
+<tr>
+<td>
+<font size=5><b>
+customer id:</b></font></td>
+<td><input type="no" id="cid" class="input"></td>
+</tr>
+<tr>
+<td><font size=5><b>
+location:</b></font>
+</td>
+<td><select class="input"><option>mumbai</option>
+<option>delhi</option>
+<option>pune</option>
+<option>indore</option>
+<option>kolkata</option>
+<option>mumbai</option></select></td></tr>
+<tr>
+<td><font size=5><b>
+mobile no:</b></font>
+</td>
+<td>
+<input type="num" id="num" class="input">
+</td>
+</tr>
+<tr>
+<td>
+<b><font size=4 color="black"> E-MAIL</font></b>
+</td>
+<td>
+<input type="email" id="em" class="input"  required><br><br>
+</td>
+</tr>
+<tr>
+<td><font size=5><b>rate our service:</b></font></td>
+<td rowspan="3">
+<input type="radio" name="aaa" checked="checked"><font size=5>Excellent</font><br>
+<input type="radio" name="aaa" value="a"><font size=5>Satisfactory</font><br>
+
+<input type="radio" name="aaa" value="a"><font size=5>Poor</font><br>
+</td></tr></table><br>
+<br>
+<button onclick="fun()">submit</button>
+</form>
+</font>
+</center>
+<script>
+function fun(){
+       
+        var a=document.getElementById("name").value;
+        var c=document.getElementById("cid").value;
+        var b=document.getElementById("num").value;
+        var d=document.getElementById("em").value;
+         var re = /^[A-Za-z]+$/;
+if(a==""||b==""||c==""||d==""){
+ alert("please fill all the fields.")
+    }
+
+else{
+     if((a.length>3)&&(a.length<12)){
+        if(re.test(document.getElementById("name").value)){
+           if(isNaN(b)){
+              alert("enter proper mobile number");
+              }
+           else{
+               if(b.length==10){
+                   if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById("em").value)){
+                         alert("FEED BACK RECIEVED");
+                         if (window.confirm("redirecting to home page")) {
+               window.location.href = "shr1.html"
+             }
+                       }
+                  else{
+                       alert("enter proper email id");
+                       }
+                               }
+                else{
+                   alert("mobile no. should contain 10 digits")
+                     }
+            
+                }
+          
+          }
+        else{
+           alert("enter only characters in name"); 
+             }         
+        }
+    else{
+       alert("name should be 4 to 12 characters long");
+        }
+}
+
+}
+</script>
+</body>
+</html>

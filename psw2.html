@@ -1,0 +1,29 @@
+<html>
+<head>
+</head>
+<body>
+<input id="pass1" type="password" placeholder="Password" style="border-radius:7px; border:2px solid #dadada;" /> <br />
+<input id="pass2" type="password" placeholder="Confirm Password" style="border-radius:7px; border:2px solid #dadada;"/> <br />
+
+<script>
+    function myFunction() {
+        var pass1 = document.getElementById("pass1").value;
+        var pass2 = document.getElementById("pass2").value;
+        if (pass1 != pass2) {
+            alert("Passwords Do not match");
+            document.getElementById("pass1").style.borderColor = "#E34234";
+            document.getElementById("pass2").style.borderColor = "#E34234";
+	    
+        }
+        else {
+            alert("Passwords Match!!!");
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'matching';
+
+        }
+    }
+</script>
+
+<button type="button" onclick="myFunction()">Sumbit</button>
+</body>
+</html>

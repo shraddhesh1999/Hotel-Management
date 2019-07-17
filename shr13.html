@@ -1,0 +1,73 @@
+<html>
+<head>
+<b>
+<font size=5 color="white">
+<center>
+Payment
+</center>
+</font></b>
+</head>
+<body background="pay.jpg">
+<center><font size=5 color="white">
+How Do You Want To Pay?</font>
+<br>
+<br>
+
+<table>
+<tr>
+<td>
+<input type="radio" name="cc" value="cc" id="cc"><font size=5 color="white">Credit Card</font><br></td>
+<td>
+<input type="radio" name="cc" value="dc" id="dc"><font size=5 color="white">Debit Card</font><br></td>
+</tr>
+<tr>
+<td>
+<font size=5 color="white">card no:</font>
+</td>
+<td>
+<input type="num" maxlenght="10" id="cnum"></td>
+</tr>
+<tr>
+<td>
+<font size=5 color="white" id="cname">name on card:</font>
+</td>
+<td>
+<input type="text"><br><br></td></tr></table>
+
+
+
+<br>
+<input type="radio" id="pr" name="cc" value="pay" checked><font size=5 color="white">pay at RECEPTION</font><br>
+
+<br>
+<br>
+
+<button type="button" onclick="myFunction()">submit</button>
+
+</center>
+
+<script>
+function myFunction()
+                   {
+    var a=document.getElementById("cnum").value;
+    var b=document.getElementById("cname").value;
+    //var c=document.getElementById("").value;
+    
+    if(document.getElementById("pr").checked;)
+      {
+    		if (window.confirm("Would you like to pay at reception!!")) {
+        						window.location.href = "shr14.html"
+      									}       
+        
+          }
+   else
+       {
+    		if (window.confirm("Would you like to pay !!")) {
+        						window.location.href = "shr14.html"
+      									}       
+        }
+
+                     }
+</script>
+</body>
+</html>
